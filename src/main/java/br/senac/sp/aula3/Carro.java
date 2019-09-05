@@ -10,7 +10,7 @@ public class Carro {
     public int velocidade ;
     public int gasolina = 20;
     public int max_gasolina = 40;
-    
+    public int abastece = 0;
     
     
     public Carro (){
@@ -94,16 +94,17 @@ public class Carro {
         return resposta;
     }
     
-    public int abastece (int a){
-        int abastece = 0 ;
+    public int abastece (int litros){
         
+        gasolina = gasolina + litros;
         
-        if (abastece + max_gasolina > max_gasolina){
+        if (gasolina > max_gasolina){
          
-        abastece = max_gasolina - gasolina;
+        gasolina = max_gasolina;
+        
             
         }else {
-            gasolina = gasolina + abastece;
+            gasolina = gasolina + litros;
         }
         return gasolina;
     }
